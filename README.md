@@ -1,6 +1,5 @@
 # egret-eagle
-An extension library of egret
-egret引擎的拓展库
+An extension library of egret. egret引擎拓展库
 ===========
 
 Egret-Eagle 用于拓展egret游戏引擎的API, 增强egret的功能.
