@@ -29,7 +29,8 @@ arc(    x:number,
         r:number, 
         startFrom:number = 0, 
         angle:number = Math.PI * 2, 
-        closeLine = false):void;
+        closeLine = false
+   ):void;
 ```
 
 eagle.Graphics可以被eagle.Shape和eagle.Sprite使用
