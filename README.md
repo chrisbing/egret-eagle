@@ -71,6 +71,7 @@ var mask = new eagle.Shape();
 mask.graphics.beginFill(0x3399cc, 1);
 mask.graphics.arc(33, 33, 33, 0, 270, true);
 mask.graphics.endFill();
+// 给irregularMask赋值会自动更新遮罩
 this.bitmap.irregularMask = mask;
 
 
@@ -78,6 +79,7 @@ mask.graphics.clear
 mask.graphics.beginFill(0x00ffff, 1);
 mask.graphics.arc(33, 33, 33, 0, 270, true);
 mask.graphics.endFill();
+// 遮罩层变更时需要手动更新遮罩
 this.bitmap.updateMask();
 ```
 
