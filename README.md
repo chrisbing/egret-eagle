@@ -4,7 +4,7 @@ An extension library of egret . egret引擎的拓展库。
 
 Egret-Eagle 用于拓展egret游戏引擎的API, 增强egret的功能.
 
-(目前仅测试1.6版本egret)
+_(目前仅测试1.6版本egret)_
 
 * Egret-Eagle 完全基于egret引擎, 在引擎之上加入拓展
 * 后续egret更新可能会导致冲突
