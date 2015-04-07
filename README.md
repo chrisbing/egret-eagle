@@ -1,5 +1,6 @@
 # egret-eagle
 An extension library of egret . egret引擎的拓展库。
+===========
 
 Egret-Eagle 用于拓展egret游戏引擎的API, 增强egret的功能.
 
@@ -11,6 +12,7 @@ Egret-Eagle 用于拓展egret游戏引擎的API, 增强egret的功能.
 * 所有API 兼容HTML5版本和NATIVE版本
 * Egret-Eagle 所有类都在eagle包内
 
+----------
 
 ## eagle.Graphics 绘制弧线
 ``` as3
