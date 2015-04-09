@@ -13,12 +13,12 @@ module eagle {
          * ‰÷»æŒ∆¿Ì
          * @member {egret.Texture} egret.Bitmap#texture
          */
-        public get texture():egret.Texture{
+        public get texture():egret.Texture {
             return this["_texture"];
         }
 
-        public set texture(value:egret.Texture){
-            if(value==this["_texture"]){
+        public set texture(value:egret.Texture) {
+            if (value == this["_texture"]) {
                 return;
             }
             this._setSizeDirty();
@@ -52,6 +52,7 @@ module eagle {
          */
         public set irregularMask(value:egret.DisplayObject) {
             if (!this._useIrregularMask) {
+                this._useIrregularMask = true;
                 this._container = new egret.DisplayObjectContainer();
                 this._bitmap = new egret.Bitmap();
                 this._bitmap.texture = this.texture;
@@ -64,6 +65,10 @@ module eagle {
             }
             this._irregularMask = value;
             this.updateMask();
+        }
+
+        public get irregularMask() {
+            return this._irregularMask;
         }
 
     }

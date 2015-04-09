@@ -13,11 +13,9 @@ module eagle {
          */
         arc(x:number, y:number, r:number, startFrom:number = 0, angle:number = Math.PI * 2, closeLine = false):void {
             this.moveTo(x, y);
-            angle = (Math.abs(angle) > 360) ? 360 : angle;
-            var n:number = Math.ceil(Math.abs(angle) / 45);
+            var PI025 = Math.PI * 0.25;
+            var n:number = Math.ceil(Math.abs(angle) / PI025);
             var angleA:number = angle / n;
-            angleA = angleA * Math.PI / 180;
-            startFrom = startFrom * Math.PI / 180;
             if (closeLine) {
                 this.lineTo(x + r * Math.cos(startFrom), y + r * Math.sin(startFrom));
             }
