@@ -1,6 +1,5 @@
 module eagle {
 
-
     export class JSONPLoader extends egret.URLLoader {
 
         private static _regID:number = 0;
@@ -41,7 +40,7 @@ module eagle {
                 if (script) document.body.removeChild(script);
                 JSONPLoader.completeCall["call_" + id]({ret: -1, msg: "Not Found"});
             };
-            script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + this.callbackName + "=" + "JSONPLoader.completeCall.call_" + id;
+            script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + this.callbackName + "=" + "eagle.JSONPLoader.completeCall.call_" + id;
             document.body.appendChild(script);
         }
 
