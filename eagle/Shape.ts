@@ -2,7 +2,7 @@ module eagle {
     export class Shape extends egret.Shape {
 
         /**
-         * »ñÈ¡ Shape ÖĞµÄ Graphics ¶ÔÏó¡£
+         * è·å– Shape ä¸­çš„ Graphics å¯¹è±¡ã€‚
          * @member {egret.Graphics} egret.Shape#graphics
          */
         public get graphics():Graphics {

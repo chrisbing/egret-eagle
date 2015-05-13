@@ -2,8 +2,8 @@ module eagle {
     export class Sprite extends egret.Sprite {
 
         /**
-         * »ñÈ¡ Sprite ÖĞµÄ Graphics ¶ÔÏó¡£
-         * Ö¸¶¨ÊôÓÚ´Ë sprite µÄ Graphics ¶ÔÏó£¬ÔÚ´Ë sprite ÖĞ¿ÉÖ´ĞĞÊ¸Á¿»æÍ¼ÃüÁî¡£
+         * è·å– Sprite ä¸­çš„ Graphics å¯¹è±¡ã€‚
+         * æŒ‡å®šå±äºæ­¤ sprite çš„ Graphics å¯¹è±¡ï¼Œåœ¨æ­¤ sprite ä¸­å¯æ‰§è¡ŒçŸ¢é‡ç»˜å›¾å‘½ä»¤ã€‚
          * @member {egret.Graphics} egret.Sprite#graphics
          */
         public get graphics():Graphics {

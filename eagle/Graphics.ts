@@ -2,14 +2,14 @@ module eagle {
     export class Graphics extends egret.Graphics {
 
         /**
-         * »­»¡Ïß
+         * ç”»å¼§çº¿
          *
-         * @param x Ô²ĞÄÎ»ÖÃx
-         * @param y Ô²ĞÄÎ»ÖÃy
-         * @param r °ë¾¶
-         * @param startFrom ÆğÊ¼Î»ÖÃ (»¡¶ÈÖÆ)
-         * @param angle Ğı×ª½Ç¶È (»¡¶ÈÖÆ)
-         * @param closeLine »æÖÆ»¡ÏßÁ½¶ËµÄµ½Ô²ĞÄµÄÁ¬Ïß
+         * @param x åœ†å¿ƒä½ç½®x
+         * @param y åœ†å¿ƒä½ç½®y
+         * @param r åŠå¾„
+         * @param startFrom èµ·å§‹ä½ç½® (å¼§åº¦åˆ¶)
+         * @param angle æ—‹è½¬è§’åº¦ (å¼§åº¦åˆ¶)
+         * @param closeLine ç»˜åˆ¶å¼§çº¿ä¸¤ç«¯çš„åˆ°åœ†å¿ƒçš„è¿çº¿
          */
         arc(x:number, y:number, r:number, startFrom:number = 0, angle:number = Math.PI * 2, closeLine = false):void {
             this.moveTo(x, y);

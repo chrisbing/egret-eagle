@@ -12,7 +12,7 @@ module eagle {
         private _renderTexture:egret.RenderTexture;
 
         /**
-         * äÖÈ¾ÎÆÀí
+         * æ¸²æŸ“çº¹ç†
          * @member {egret.Texture} egret.Bitmap#texture
          */
         public get texture():egret.Texture {
@@ -32,12 +32,12 @@ module eagle {
         }
 
         /**
-         * ¸üĞÂ²»¹æÔòÕÚÕÖ, ÔÚirregularMask»æÖÆ¸Ä±äµÄÊ±ºòÇëÊÖ¶¯µ÷ÓÃ
+         * æ›´æ–°ä¸è§„åˆ™é®ç½©, åœ¨irregularMaskç»˜åˆ¶æ”¹å˜çš„æ—¶å€™è¯·æ‰‹åŠ¨è°ƒç”¨
          */
         public updateMask() {
-            // ²»¹æÔòÕÚÕÖ£¬Ê¹ÓÃ RenderTexture + BlendMode ÊµÏÖ£¬Õâ¸öµ÷ÓÃ·½Ê½ÔÚÎ´À´»á½øÒ»²½¼ò»¯
-            // ÊµÏÖÔ­Àí£º ´´½¨Ò»¸ö Container£¬ÔÚÆäÖĞÏÈÌí¼ÓÒ»¸öÍ¼Æ¬£¬È»ºóÔÙÌí¼ÓÒ»¸öÃÉ°æ£¬²¢½«ÃÉ°æµÄ»ìºÏÄ£Ê½ÉèÖÃÎª²Á³ı£¬È»ºó½«Õâ¸ö Container Í¨¹ı RenderTexture »æÖÆÎªÒ»¸öÎÆÀí
-            //Îª±£Ö¤²Á³ı½á¹ûÕıÈ·£¬´«ÈëclipRect²ÎÊı£¬¹æ¶¨×îÖÕRenderTexture´óĞ¡Ö»ÓĞmaskÇøÓò´óĞ¡
+             // ä¸è§„åˆ™é®ç½©ï¼Œä½¿ç”¨ RenderTexture + BlendMode å®ç°ï¼Œè¿™ä¸ªè°ƒç”¨æ–¹å¼åœ¨æœªæ¥ä¼šè¿›ä¸€æ­¥ç®€åŒ–
+            // å®ç°åŸç†ï¼š åˆ›å»ºä¸€ä¸ª Containerï¼Œåœ¨å…¶ä¸­å…ˆæ·»åŠ ä¸€ä¸ªå›¾ç‰‡ï¼Œç„¶åå†æ·»åŠ ä¸€ä¸ªè’™ç‰ˆï¼Œå¹¶å°†è’™ç‰ˆçš„æ··åˆæ¨¡å¼è®¾ç½®ä¸ºæ“¦é™¤ï¼Œç„¶åå°†è¿™ä¸ª Container é€šè¿‡ RenderTexture ç»˜åˆ¶ä¸ºä¸€ä¸ªçº¹ç†
+            //ä¸ºä¿è¯æ“¦é™¤ç»“æœæ­£ç¡®ï¼Œä¼ å…¥clipRectå‚æ•°ï¼Œè§„å®šæœ€ç»ˆRenderTextureå¤§å°åªæœ‰maskåŒºåŸŸå¤§å°
             this._renderTexture.drawToTexture(this._container, new egret.Rectangle(
                 this._irregularMask.x,
                 this._irregularMask.y,
@@ -48,7 +48,7 @@ module eagle {
         }
 
         /**
-         * ²»¹æÔòÕÚÕÖ
+         * ä¸è§„åˆ™é®ç½©
          * @param value
          */
         public set irregularMask(value:egret.DisplayObject) {
