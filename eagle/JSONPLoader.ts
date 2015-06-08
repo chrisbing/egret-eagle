@@ -12,13 +12,32 @@ module eagle {
 
         private static _regID:number = 0;
 
-        public static completeCall:any = {};
+        /** completeCall */
+        public static c:any = {};
 
         private callbackName:string;
 
-        constructor(callbackName:string) {
+
+        /**
+         * 创建 egret.URLLoader 对象
+         * @method egret.URLLoader#constructor
+         * @param request {URLRequest} 一个 URLRequest 对象，指定要下载的 URL。
+         * 如果省略该参数，则不开始加载操作。如果已指定参数，则立即开始加载操作
+         */
+
+        /**
+         * 创建 eagle.JSONPLoader 对象
+         * @method eagle.JSONPLoader#constructor
+         * @param request {URLRequest} 一个 URLRequest 对象，指定要下载的 URL。
+         * 如果省略该参数，则不开始加载操作。如果已指定参数，则立即开始加载操作
+         * @param callbackName JSONP 回调函数
+         */
+        constructor(callbackName:string, request?:egret.URLRequest) {
             super();
             this.callbackName = callbackName;
+            if (request) {
+                this.load(request);
+            }
         }
 
         /**
@@ -32,11 +51,11 @@ module eagle {
 
             // 保证 回调的id是最初生成的id
             !function (id) {
-                JSONPLoader.completeCall["call_" + id] = (data)=> {
+                JSONPLoader.c["call_" + id] = (data)=> {
                     this.data = data;
-                    document.body.removeChild(document.getElementById("jsonp_" + id))
+                    document.body.removeChild(document.getElementById("jsonp_" + id));
                     this.dispatchEvent(new egret.Event(egret.Event.COMPLETE));
-                    delete JSONPLoader.completeCall["call_" + id];
+                    delete JSONPLoader.c["call_" + id];
                 };
             }.call(this, JSONPLoader._regID);
 
@@ -51,10 +70,9 @@ module eagle {
                 script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + "rd=" + (Math.random() + "").replace(/\./, "") + "&" + request.data.toString();
             }
             script.onerror = ()=> {
-                document.body.removeChild(script);
-                JSONPLoader.completeCall["call_" + id]({ret: -1, msg: "Not Found"});
+                JSONPLoader.c["call_" + id]({ret: -1, msg: "Not Found"});
             };
-            script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + this.callbackName + "=" + "eagle.JSONPLoader.completeCall.call_" + id;
+            script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + this.callbackName + "=" + "eagle.JSONPLoader.c.call_" + id;
             document.body.appendChild(script);
         }
 
