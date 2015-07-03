@@ -17,14 +17,6 @@ module eagle {
 
         private callbackName:string;
 
-
-        /**
-         * 创建 egret.URLLoader 对象
-         * @method egret.URLLoader#constructor
-         * @param request {URLRequest} 一个 URLRequest 对象，指定要下载的 URL。
-         * 如果省略该参数，则不开始加载操作。如果已指定参数，则立即开始加载操作
-         */
-
         /**
          * 创建 eagle.JSONPLoader 对象
          * @method eagle.JSONPLoader#constructor
