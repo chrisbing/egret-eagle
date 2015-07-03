@@ -71,6 +71,10 @@ module eagle {
             }
             script.onerror = ()=> {
                 JSONPLoader.c["call_" + id]({ret: -1, msg: "Not Found"});
+                try {
+                    document.body.removeChild(script);
+                } catch (e) {
+                }
             };
             script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + this.callbackName + "=" + "eagle.JSONPLoader.c.call_" + id;
             document.body.appendChild(script);
