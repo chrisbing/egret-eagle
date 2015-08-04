@@ -61,8 +61,8 @@ module eagle {
             if (request.data) {
                 script.src += (request.url.indexOf("?") === -1 ? "?" : "&") + "rd=" + (Math.random() + "").replace(/\./, "") + "&" + request.data.toString();
             }
-            script.onerror = ()=> {
-                JSONPLoader.c["call_" + id]({ret: -1, msg: "Not Found"});
+            script.onerror = (e)=> {
+                this.dispatchEventWith(egret.IOErrorEvent.IO_ERROR, false, e);
                 try {
                     document.body.removeChild(script);
                 } catch (e) {
